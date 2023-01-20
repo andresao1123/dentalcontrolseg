@@ -1,0 +1,150 @@
+body{
+    background: #3c2edb;
+    height: 90vh;
+    font-family: 'jost', sans-serif;
+}
+.hidden-button{
+    display: none;
+}
+
+
+
+@media all and (min-width: 992px) {
+	.navbar .nav-item .dropdown-menu{  display:block; opacity: 0;  visibility: hidden; transition:.3s; margin-top:0;  }
+	.navbar .nav-item:hover .nav-link{ color: #fff;  }
+	.navbar .dropdown-menu.fade-down{ top:80%; transform: rotateX(-75deg); transform-origin: 0% 0%; }
+	.navbar .dropdown-menu.fade-up{ top:180%;  }
+	.navbar .nav-item:hover .dropdown-menu{ transition: .3s; opacity:1; visibility:visible; top:100%; transform: rotateX(0deg); }
+    .navbar .dropdown-menu a:hover{background: #3c2edb !important;  color: #fff;}
+}	
+
+.centered{
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    height: 500px;
+  
+}
+table.dataTable thead .sorting:after,
+table.dataTable thead .sorting:before,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_asc:before,
+table.dataTable thead .sorting_asc_disabled:after,
+table.dataTable thead .sorting_asc_disabled:before,
+table.dataTable thead .sorting_desc:after,
+table.dataTable thead .sorting_desc:before,
+table.dataTable thead .sorting_desc_disabled:after,
+table.dataTable thead .sorting_desc_disabled:before {
+bottom: .5em;
+}
+.bgcolor-red {
+    background-color:red;
+}
+.bgcolor-green {
+    background-color:green;
+}
+.bgcolor-yellow {
+    background-color:yellow;
+}
+.remove-bg{
+    filter: brightness(1.1);
+    mix-blend-mode: multiply;
+}
+
+/*----------*/
+/* Popup*/
+/*----------*/
+.overlay{
+    background: rgba(0, 0, 0, .3);
+    position: fixed;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+}
+
+.overlay.active{
+    visibility: visible;
+}
+
+.popup{
+    background: #f8f8f8;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, .3);
+    border-radius: 3px;
+    font-family: 'Montserrat', sans-serif;
+    padding: 20px;
+    text-align: center;
+    width: 600px;
+    transition: .3s ease all;
+    transform: scale(0.7);
+    opacity: 0;
+}
+.popup .btn-cerrar-popup{
+    font-size: 16px;
+    line-height: 16px;
+    display: block;
+    text-align: right;
+    color: #BBBBBB;
+    transition: .3s ease all;
+}
+.popup .btn-cerrar-popup:hover{
+    color: #000;
+}
+.popup h3{
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    opacity: 0;
+}
+.popup h5{
+    font-size: 26px;
+    font-weight: 300;
+    margin-bottom: 40px;
+    opacity: 0;
+}
+/*----------*/
+/* Animaciones*/
+/*----------*/
+.popup.active{
+    opacity: 1;
+    transform: scale(1);
+}
+.popup.active h3{
+    animation: entradaTitulo .8s ease .5s forwards;
+}
+.popup.active h5{
+    animation: entradaSubtitulo .8s ease .5s forwards;
+}
+
+@keyframes entradaTitulo{
+    from{
+        transform: translateY(-25px);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes entradaSubtitulo{
+    from{
+        transform: translateY(25px);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+/*Area calendario*/
+#ComboDoctores{
+    width: 100%;
+}
+/*Fin area calendario*/
